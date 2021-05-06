@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 <div class="container">
+  <!-- Slider Section Start -->
+  <div class="slider-section section">
+    <div class="slide-item bg-parallax"
+      style="background-image: url({% static 'slider-1.jpg' %});  background-position: 50% 0px; height: 300px;">
+      <div class="container">
+        <div class="slider-content text-center">
+          <h2 class="title" style="color: black;">Find Your Next Project</h2>
+          <p style="color: black;">More then <span>1 crore</span> jobs listed here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slider Section End -->
   <h1>You are now logged in!</h1>
   <h2><a href="{% url 'groups:all'%}">View Interns</a></h2>
-
-
 </div>
 
 
