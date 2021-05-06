@@ -2,9 +2,17 @@ from django.contrib import auth
 from django.db import models
 from django.utils import timezone
 
+POSITION_CHOICES=(
+    ('prof','PROF'),
+    ('stud', 'STUDENT'),
+    ('alumnus','ALUMNUS'),
+)
+
 
 class User(auth.models.User, auth.models.PermissionsMixin):
-   # Prof= models.BooleanField()
+   position= models.CharField(max_length=255, choices=POSITION_CHOICES, default='stud')
+   photo= models.ImageField(default= None)
 
-    def __str__(self):
+
+   def __str__(self):
         return "@{}".format(self.username)

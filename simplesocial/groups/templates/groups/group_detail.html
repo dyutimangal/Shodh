@@ -11,16 +11,36 @@
 
 {% block group_content %}
 
+<h2>- Created by {{ group.creator }}</h2>
+
+<p> {{group.description}}</p>
+
+{% if group.creator != user %}
+<p> <a href="{% url 'posts:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span>Apply! </a> </p>
+{% endif %}
+
 <div class="col-md-8">
-	{% if group.posts.count == 0 %}
-	<h2>No applications for this intern </h2>
+	{% if group.creator == user %}
 
+		{% if group.posts.count == 0 %}
+		<h2>No applications for this intern!</h2>
+
+		{% else %}
+
+			{% for post in group.posts.all %}
+					{% include "posts/_post.html" %}
+			{% endfor %}
+
+		{% endif %}
+		
 	{% else %}
-
 		{% for post in group.posts.all %}
-			{% include "posts/_post.html" %}
+			{% if post.user == user %}
+				{% include "posts/_post.html" %}
+			{% endif %}
 		{% endfor %}
 
 	{% endif %}
+
 </div>
 {% endblock %}

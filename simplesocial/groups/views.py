@@ -12,8 +12,14 @@ from groups.models import Group
 from . import models
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
-    fields = ("name", "description")
+    fields = ("name", "description", "field_of_job")
     model = Group
+    
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.creator = self.request.user
+        self.object.save()
+        return super().form_valid(form)
 
 class SingleGroup(generic.DetailView):
     model = Group
@@ -21,7 +27,7 @@ class SingleGroup(generic.DetailView):
 class ListGroups(generic.ListView):
     model = Group
 
-
+"""
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
@@ -68,3 +74,4 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
                 "You have successfully left this group."
             )
         return super().get(request, *args, **kwargs)
+"""

@@ -16,4 +16,4 @@ class PostForm(forms.ModelForm):
                 models.Group.objects.filter(
                     pk__in=user.groups.values_list("group__pk")
                 )
-            )
+            ) 

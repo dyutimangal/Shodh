@@ -30,7 +30,8 @@
 				{{ group.description_html|safe }}
 				<div class="row">
 					<div class="col-md-4">
-						<span class="badge">{{ group.posts.count }}</span> Application{{ group.posts.count|pluralize }}
+						Created by<span class="badge"> {{ group.creator }} </span>
+						Number of Application{{ group.posts.count|pluralize }} <span class="badge">{{ group.posts.count }}</span>
 					</div>
 				</div>
 			</div>

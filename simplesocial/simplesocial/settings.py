@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#AUTH_USER_MODEL="settings.AUTH_USER_MODEL"
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'groups',
     'posts',
+    'django_auth_adfs',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_auth_adfs.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'simplesocial.urls'
@@ -74,6 +77,36 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'simplesocial.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+    
+    'django_auth_adfs.backend.AdfsAuthCodeBackend',
+    'django_auth_adfs.backend.AdfsAccessTokenBackend',
+    
+)
+
+
+LOGIN_URL = "django_auth_adfs:login"
+LOGIN_REDIRECT_URL = ""
+
+client_id = '1cad7aa7-4529-4bab-ad87-d73a31ed4360'
+client_secret = '_6JwAW54er2JOsno2.u4IMDl161Eu_-xMp'
+tenant_id = '850aa78d-94e1-4bc6-9cf3-8c11b530701c'
+
+
+AUTH_ADFS = {
+    'AUDIENCE': client_id,
+    'CLIENT_ID': client_id,
+    'CLIENT_SECRET': client_secret,
+    'CLAIM_MAPPING': {'first_name': 'given_name',
+                      'last_name': 'family_name',
+                      'email': 'upn'},
+    'GROUPS_CLAIM': 'roles',
+    'MIRROR_GROUPS': True,
+    'USERNAME_CLAIM': 'upn',
+    'TENANT_ID': tenant_id,
+    'RELYING_PARTY_ID': client_id,
+    'LOGIN_EXEMPT_URLS': [],
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -104,6 +137,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+CUSTOM_FAILED_RESPONSE_VIEW = 'dot.path.to.custom.views.login_failed'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

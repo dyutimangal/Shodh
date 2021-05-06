@@ -35,7 +35,7 @@
                       <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Apply for Intern</a></li>
                       <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Intern</a></li>
                       <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Intern</a></li>
-                      <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                      <li><a href="{% url 'django_auth_adfs:logout' %}" class="btn btn-simple">Log out</a></li>
     						{% else %}
     						      <li><a href="{% url 'groups:all' %}"class="btn btn-simple">Available Interns</a></li>
     						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
