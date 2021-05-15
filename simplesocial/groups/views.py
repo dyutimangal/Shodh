@@ -12,7 +12,9 @@ from groups.models import Group
 from . import models
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
-    fields = ("name", "description", "field_of_job")
+    # fields = ("name", "description", "field_of_job")
+    fields = ("name", "duration", "stipend", "description", "field_of_job", "skills_required", "expected_qualifications")
+
     model = Group
     
     def form_valid(self, form):

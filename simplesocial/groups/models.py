@@ -37,7 +37,9 @@ class Group(models.Model):
     #cpi_cutoff = models.DecimalField(max_digits=3, decimal_places=2)
     field_of_job= models.CharField(max_length=255, choices=FIELD_CHOICES, default='sde')
     skills_required=models.CharField(max_length=255,choices=SKILL_CHOICES, default='js')
-
+    duration = models.TextField(blank=True, default='', null=True)
+    stipend = models.TextField(blank=True, default='', null=True)
+    expected_qualifications= models.TextField(blank=True, default='', null=True)
     def __str__(self):
         return self.name
 
