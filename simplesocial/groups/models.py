@@ -40,6 +40,8 @@ class Group(models.Model):
     duration = models.TextField(blank=True, default='', null=True)
     stipend = models.TextField(blank=True, default='', null=True)
     expected_qualifications= models.TextField(blank=True, default='', null=True)
+    apply_by = models.CharField(max_length=255,blank=True, default='', null=True)
+    start_date= models.CharField(max_length=255,blank=True, default='', null=True)
     def __str__(self):
         return self.name
 

@@ -13,7 +13,7 @@ from . import models
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     # fields = ("name", "description", "field_of_job")
-    fields = ("name", "duration", "stipend", "description", "field_of_job", "skills_required", "expected_qualifications")
+    fields = ("name", "duration", "stipend", "description", "field_of_job", "skills_required", "expected_qualifications","apply_by", "start_date")
 
     model = Group
     
