@@ -24,7 +24,7 @@ class Post(models.Model):
     group = models.ForeignKey(Group,on_delete=models.CASCADE, related_name="posts",null=True, blank=True)
     name = models.CharField(max_length=255, default=None, null=True)    
     year = models.CharField(max_length=255, choices=YEAR_CHOICES, default='na', null=True)
-
+    qualifications= models.TextField(blank=True, default='', null=True)
     def __str__(self):
         return self.message
 
