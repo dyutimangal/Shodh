@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0059)https://demo.hasthemes.com/keller-preview/keller/index.html -->
+<html
+    class="js sizes websockets customelements history postmessage webworkers picture pointerevents webanimations webgl srcset flexbox cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside"
+    lang="en">
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://demo.hasthemes.com/keller-preview/keller/assets/images/favicon.png">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shodh</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" type="image/x-icon"
+    href="https://demo.hasthemes.com/keller-preview/keller/assets/images/favicon.png"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'simplesocial/css/master.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/bootstrap.min.css' %}">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/flaticon.css' %}">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/slick.css' %}">
+
+    <!-- Main Style CSS -->
+
+    <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/style.css' %}">
+
+    <script type="text/javascript" charset="UTF-8"
+        src="{% static 'Keller - Job Board HTML Template_files/common.js.download' %}"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="{% static 'Keller - Job Board HTML Template_files/util.js.download' %}"></script>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1008.0" data-gr-ext-installed="">
+
+    <header class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+
+                <!-- Header Logo Start -->
+                <div class="col">
+                    <div class="header-logo">
+                        <a href="{% url 'home' %}"><img src="./Keller - Job Board HTML Template_files/logo-light.png"
+                                alt="Site Logo"></a>
+                    </div>
+                </div><!-- Header Logo End -->
+
+                <!-- Offcanvas Toggle Start -->
+                <div class="col-auto d-lg-none d-flex align-items-center">
+                    <button class="offcanvas-toggle">
+                        <span></span>
+                    </button>
+                </div>
+                <!-- Offcanvas Toggle End -->
+
+                <!-- Header Links Start -->
+                {% if user.is_authenticated %}
+                <div class="header-links col-auto order-lg-3">
+                    <a href="{% url 'posts:create' %}">Apply</a>
+                </div>
+                <div class="header-links col-auto order-lg-3">
+                    <a href="{% url 'groups:all' %}" ">Interns</a>
+        </div>
+        <div class=" header-links col-auto order-lg-3">
+                        <a href="{% url 'groups:create' %}" ">Recruit</a>
+        </div>
+        {% else %}
+
+        <div class=" header-links col-auto order-lg-3">
+                            <a href="{% url 'accounts:login' %}" data-toggle="modal" data-target="#loginSignupModal"
+                                data-target-sub="#login">Login</a>
+                            <span>or</span>
+                            <a href="{% url 'accounts:signup' %}" data-toggle="modal" data-target="#loginSignupModal"
+                                data-target-sub="#signup">Sign up</a>
+                </div><!-- Header Links End -->
+                {% endif %}
+
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!--Offcanvas Section Start-->
+    <div id="offcanvas" class="offcanvas-section">
+        <button class="offcanvas-close" data-target="#offcanvas">×</button>
+        <div class="offcanvas-wrap">
+            <div class="inner">
+
+                <!-- Offcanvas user Start -->
+
+                {% if user.is_authenticated %}
+                {% else %}
+                <div class="offcanvas-user">
+                    <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Login</a>
+                    <span>or</span>
+                    <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Sign up</a>
+                </div>
+                {% endif %}
+                <!-- Offcanvas user End -->
+
+                <!-- Offcanvas Menu Start -->
+                <div class="offcanvas-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'posts:create' %}">Apply</a>
+                            </li>
+                            <li><a href="{% url 'groups:all' %}">Interns</a>
+                            </li>
+                            <li><a href="{% url 'groups:create' %}">Recruit</a>
+                            </li>
+                            <!-- <li><a href="{% url 'groups:all' %}">Contact us</a>
+              </li> -->
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Offcanvas Menu End -->
+
+            </div>
+        </div>
+    </div>
+    <!--Offcanvas Section End-->
+
+    <!-- Slider Section Start -->
+    <div class="slider-section section">
+        <div class="slide-item bg-parallax" data-bg-image="{% static 'images/cover.jpg' %}" data-overlay="50"
+            style="background-image: url({% static 'images/cover.jpg' %});  background-position: 50% 0px;">
+            <div class="container">
+                <div class="slider-content text-center">
+                    <h2 class="title">Find Your Next Project</h2>
+                    <p>More then <span>1,524</span> job listed here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider Section End -->
+
+    <!-- Job Search Section Start -->
+    <div class="job-search-section section">
+        <div class="container">
+            <div class="job-search-wrap">
+
+                <!-- Job Search Form Start -->
+                <div class="job-search-form">
+                    <form action="https://demo.hasthemes.com/keller-preview/keller/index.html#">
+                        <div class="row mb-n4">
+
+                            <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
+                                <input type="text" placeholder="e.g. web design">
+                            </div>
+
+
+                            <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
+                                <select>
+                                    <option value="1">Any category</option>
+                                    <option value="2">Web Designer</option>
+                                    <option value="3">Web Developer</option>
+                                    <option value="4">Graphic Designer</option>
+                                    <option value="5">App Developer</option>
+                                    <option value="6">UI & UX Expert</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
+                                <button type="button" class="btn btn-primary">Search</button>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- Job Search Form End -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Job Search Section End -->
+
+
+
+
+    <!-- Funfact Section Start -->
+    <div class="section section-padding bg-parallax" data-bg-image="({% static 'images/cover2.jpg' %})"
+        data-overlay="50"
+        style="background-image: url({% static 'images/cover2.jpg' %}); background-position: 50% 410px;">
+        <div class="container">
+            <div class="funfact-wrap row">
+
+                <!-- Funfact Start -->
+                <div class="funfact col-md-3 col-sm-6 col-12">
+                    <span class="counter">1354</span>
+                    <span class="title">Job Post</span>
+                </div>
+                <!-- Funfact Start -->
+
+                <!-- Funfact Start -->
+                <div class="funfact col-md-3 col-sm-6 col-12">
+                    <span class="counter">1741</span>
+                    <span class="title">Members</span>
+                </div>
+                <!-- Funfact Start -->
+
+                <!-- Funfact Start -->
+                <div class="funfact col-md-3 col-sm-6 col-12">
+                    <span class="counter">1204</span>
+                    <span class="title">Resume</span>
+                </div>
+                <!-- Funfact Start -->
+
+                <!-- Funfact Start -->
+                <div class="funfact col-md-3 col-sm-6 col-12">
+                    <span class="counter">142</span>
+                    <span class="title">Company</span>
+                </div>
+                <!-- Funfact Start -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Funfact Section End -->
+
+    <!-- Featured Conpanies Start -->
+    <div class="section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="title">Featured Companies</h2>
+                <p>Here's the most job listed by those companies.</p>
+            </div>
+
+            <!-- Company List Wrap Start -->
+            <div class="company-slider row slick-initialized slick-slider"><button class="slick-prev slick-arrow"
+                    style=""><i class="fa fa-angle-left"></i></button>
+
+                <!-- Company List Start -->
+                <div class="slick-list draggable">
+                    <div class="slick-track"
+                        style="opacity: 1; width: 5200px; transform: translate3d(-3000px, 0px, 0px);">
+                        <div class="col slick-slide slick-cloned" data-slick-index="-6" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-5.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Greensoul</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="-5" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-6.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Generous</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-7.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Buzco</h6>
+                                <span class="open-job">3 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-8.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Salina</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-9.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Hope</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-10.png' %}"
+                                        alt="company-span"></span>
+                                <h6 class="title">Bebsha</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="0" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-1.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Envato</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="1" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-2.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Astha</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="2" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-3.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Github</h6>
+                                <span class="open-job">4 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="3" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-4.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Medicore</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="4" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-5.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Greensoul</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="5" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-6.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Generous</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="6" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-7.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Buzco</h6>
+                                <span class="open-job">3 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="7" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-8.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Salina</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="8" aria-hidden="true" style="width: 200px;"
+                            tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-9.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Hope</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-current slick-active" data-slick-index="9" aria-hidden="false"
+                            style="width: 200px;" tabindex="0">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-10.png' %}"
+                                        alt="company-span"></span>
+                                <h6 class="title">Bebsha</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned slick-active" data-slick-index="10" aria-hidden="false"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-1.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Envato</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned slick-active" data-slick-index="11" aria-hidden="false"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-2.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Astha</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned slick-active" data-slick-index="12" aria-hidden="false"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-3.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Github</h6>
+                                <span class="open-job">4 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned slick-active" data-slick-index="13" aria-hidden="false"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-4.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Medicore</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned slick-active" data-slick-index="14" aria-hidden="false"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="0">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-5.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Greensoul</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="15" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-6.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Generous</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="16" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-7.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Buzco</h6>
+                                <span class="open-job">3 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="17" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-8.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Salina</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="18" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-9.png' %}"
+                                        alt="company-1"></span>
+                                <h6 class="title">Hope</h6>
+                                <span class="open-job">1 open positions</span>
+                            </a>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="19" aria-hidden="true"
+                            style="width: 200px;" tabindex="-1">
+                            <a href="https://demo.hasthemes.com/keller-preview/keller/company-single.html"
+                                class="feature-company" tabindex="-1">
+                                <span class="company-logo"><img
+                                        src="{% static 'Keller - Job Board HTML Template_files/company-10.png' %}"
+                                        alt="company-span"></span>
+                                <h6 class="title">Bebsha</h6>
+                                <span class="open-job">2 open positions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <!-- Company List Start -->
+
+                <button class="slick-next slick-arrow" style=""><i class="fa fa-angle-right"></i></button>
+            </div>
+            <!-- Company List Wrap Start -->
+
+        </div>
+    </div>
+    <!-- Featured Conpanies End -->
+
+    <!-- Testimonial Section Start -->
+    <div class="section section-padding bg-parallax" data-bg-image="{% static 'images/cover3.jpg' %}" data-overlay="65"
+        style="background-image: url({% static 'images/cover3.jpg' %}); background-position: 50% 384px;">
+        <div class="container">
+
+            <!-- Testimonial Slider Start -->
+            <div class="testimonial-slider row slick-initialized slick-slider"><button class="slick-prev slick-arrow"
+                    style=""><i class="fa fa-angle-left"></i></button>
+
+                <!-- Testimonial Start -->
+                <div class="slick-list draggable">
+                    <div class="slick-track"
+                        style="opacity: 1; width: 8400px; transform: translate3d(-2400px, 0px, 0px);">
+                        <div class="col slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true"
+                            style="width: 1200px;" tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-3.jpg' %}" alt="">
+                                <h6 class="name">Ronald Wright</h6>
+                                <span class="title">Admin of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="0" aria-hidden="true" style="width: 1200px;"
+                            tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-1.jpg' %}" alt="">
+                                <h6 class="name">Sharon Harper</h6>
+                                <span class="title">Marketer of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false"
+                            style="width: 1200px;" tabindex="0">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-2.jpg' %}" alt="">
+                                <h6 class="name">Harold McCoy</h6>
+                                <span class="title">CEO of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide" data-slick-index="2" aria-hidden="true" style="width: 1200px;"
+                            tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-3.jpg' %}" alt="">
+                                <h6 class="name">Ronald Wright</h6>
+                                <span class="title">Admin of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="3" aria-hidden="true"
+                            style="width: 1200px;" tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-1.jpg' %}" alt="">
+                                <h6 class="name">Sharon Harper</h6>
+                                <span class="title">Marketer of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="4" aria-hidden="true"
+                            style="width: 1200px;" tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-2.jpg' %}" alt="">
+                                <h6 class="name">Harold McCoy</h6>
+                                <span class="title">CEO of Hastech</span>
+                            </div>
+                        </div>
+                        <div class="col slick-slide slick-cloned" data-slick-index="5" aria-hidden="true"
+                            style="width: 1200px;" tabindex="-1">
+                            <div class="testimonial text-center text-white">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, modi sed
+                                    praesentium necessitatibus tenetur neque, veritatis esse voluptatem</p>
+                                <img src="{% static 'Keller - Job Board HTML Template_files/author-3.jpg' %}" alt="">
+                                <h6 class="name">Ronald Wright</h6>
+                                <span class="title">Admin of Hastech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial End -->
+
+                <!-- Testimonial Start -->
+
+                <!-- Testimonial End -->
+
+                <!-- Testimonial Start -->
+
+                <!-- Testimonial End -->
+
+                <button class="slick-next slick-arrow" style=""><i class="fa fa-angle-right"></i></button>
+            </div>
+            <!-- Testimonial Slider End -->
+
+        </div>
+    </div>
+    <!-- Testimonial Section End -->
+
+
+
+    <!-- JS
+============================================ -->
+
+    <!-- Google Map API JS -->
+    <script src="{% static 'Keller - Job Board HTML Template_files/js.js'"></script>
+
+    <!-- Vendors JS -->
+    <script src="{% static 'Keller - Job Board HTML Template_files/modernizr-3.6.0.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery-3.4.1.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/bootstrap.bundle.min.js.download' %}"></script>
+
+    <!-- Plugins JS -->
+    <script src="{% static 'Keller - Job Board HTML Template_files/slick.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery.waypoints.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery.counterup.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery.parallax.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery.ajaxchimp.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/ion.rangeSlider.min.js.download' %}"></script>
+    <script src="{% static 'Keller - Job Board HTML Template_files/jquery.scrollUp.min.js.download' %}"></script>
+
+    <!-- Main Activation JS -->
+    <script src="{% static 'Keller - Job Board HTML Template_files/main.js.download' %}"></script><a id="scrollUp"
+        href="https://demo.hasthemes.com/keller-preview/keller/index.html#top"
+        style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-long-arrow-up"></i></a>
+
+
+
+</body>
+
+</html>

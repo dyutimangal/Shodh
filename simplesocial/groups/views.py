@@ -4,12 +4,18 @@ from django.contrib.auth.mixins import(
     PermissionRequiredMixin
 )
 
-from django.urls import reverse
+from django.urls import reverse, path
 from django.db import IntegrityError
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from groups.models import Group
 from . import models
+
+def searchbar(request):
+    if(request.method=="POST"):
+        searched=request.POST.get("searchbar")
+        groupss=Group.objects.filter(name__contains=searched)
+        return render(request,'groups/searchbar.html',{'searched':searched, 'groupss':groupss})
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     # fields = ("name", "description", "field_of_job")
