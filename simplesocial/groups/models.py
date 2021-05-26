@@ -42,6 +42,12 @@ class Group(models.Model):
     expected_qualifications= models.TextField(blank=True, default='', null=True)
     apply_by = models.CharField(max_length=255,blank=True, default='', null=True)
     start_date= models.CharField(max_length=255,blank=True, default='', null=True)
+
+    selected1 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected1", default=None, null=True)
+    selected2 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected2", default=None, null=True)
+    selected3 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected3", default=None, null=True)
+    selected_count= models.IntegerField(default=0)
+
     def __str__(self):
         return self.name
 

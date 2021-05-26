@@ -37,6 +37,12 @@
 				{% endfor %}
 			{% endif %}
 
+			<h2>Selected applications for this intern!</h2>
+			<h3>Applicant 1: {{group.selected1}} </h2>
+			<h3>Applicant 2: {{group.selected2}} </h2>
+			<h3>Applicant 3: {{group.selected3}} </h2>
+	
+
 		{% else %}
 		
 		{% for post in group.posts.all %}
@@ -44,6 +50,7 @@
 				{% include "posts/_post.html" %}
 			{% endif %}
 		{% endfor %}
+
 
 		{% endif %}
 	</div>

@@ -1,0 +1,29 @@
+
+{% block content %}
+
+    <ul>
+    {{object.name}}
+
+    </ul>
+    <ul>
+        {{object.position}}
+
+        </ul>
+
+        <ul>
+            {{object.user}}
+
+            </ul>
+            <ul>
+                {{object.photo}}
+
+                </ul>
+
+
+
+{% endblock %}
+
+<h1>You have been selected for the following jobs:</h1>
+    <h2>{{object.job1.name}}</h2>    
+    <h2>{{object.job2.name}}</h2>    
+    <h2>{{object.job3.name}}</h2>    
