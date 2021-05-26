@@ -1125,6 +1125,7 @@ select {
 /*----------------------------------------*/
 .header {
   position: absolute;
+  background-color: #007BFF;
   z-index: 99;
   top: 0;
   left: 0;
