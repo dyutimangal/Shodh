@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import(
     PermissionRequiredMixin
 )
 
+
 from django.urls import reverse, path
 from django.db import IntegrityError
 from django.shortcuts import get_object_or_404, render
@@ -34,6 +35,7 @@ class SingleGroup(generic.DetailView):
 
 class ListGroups(generic.ListView):
     model = Group
+  
 
 """
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):

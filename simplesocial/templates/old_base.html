@@ -111,11 +111,8 @@
         {% else %}
 
         <div class=" header-links col-auto order-lg-3">
-                            <a href="{% url 'accounts:login' %}" data-toggle="modal" data-target="#loginSignupModal"
-                                data-target-sub="#login">Login</a>
-                            <span>or</span>
-                            <a href="{% url 'accounts:signup' %}" data-toggle="modal" data-target="#loginSignupModal"
-                                data-target-sub="#signup">Sign up</a>
+                    
+                           <a href="{% url 'django_auth_adfs:login' %}" > <button class="blue">Login</button></a>
                 </div><!-- Header Links End -->
                 {% endif %}
 
@@ -137,9 +134,8 @@
                 {% if user.is_authenticated %}
                 {% else %}
                 <div class="offcanvas-user">
-                    <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Login</a>
-                    <span>or</span>
-                    <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Sign up</a>
+                    <a href="{% url 'django_auth_adfs:login' %}" > <button class="blue">Login</button></a>
+
                 </div>
                 {% endif %}
                 <!-- Offcanvas user End -->

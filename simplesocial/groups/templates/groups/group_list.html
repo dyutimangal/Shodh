@@ -103,7 +103,7 @@
 		<div class="content">
 			{% if user.is_authenticated %}
 			<h5 class="title">
-				Logged in as <a href="{% url 'accounts:profile' slug=user.username %}">@{{user.username }}</a>
+				Logged in as <a href="{% url 'accounts:profile' slug=user.userprofile.username %}">@{{user.userprofile.username}}</a>
 			</h5>
 
 			{% endif %}

@@ -52,14 +52,14 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     # form_class = forms.PostForm
     # fields = ('message','group')
-    fields = ('group','name','year','message', 'qualifications')
+    fields = ('group','name','message')# 'qualifications')
     model = models.Post
 
     # def get_form_kwargs(self):
     #     kwargs = super().get_form_kwargs()
     #     kwargs.update({"user": self.request.user})
     #     return kwargs
-
+    success_url='/groups/'
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user

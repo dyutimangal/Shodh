@@ -95,6 +95,9 @@
         <!-- Header Links Start -->
         {% if user.is_authenticated %}
         <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
           <a href="{% url 'posts:create' %}">Apply</a>
         </div>
         <div class="header-links col-auto order-lg-3">
@@ -572,7 +575,6 @@
     </div>
   </div>
   <!-- Featured Conpanies End -->
-
   <!-- Testimonial Section Start -->
   <div class="section section-padding bg-parallax" data-bg-image="{% static 'images/cover3.jpg' %}" data-overlay="65"
     style="background-image: url({% static 'images/cover3.jpg' %}); background-position: 50% 384px;">

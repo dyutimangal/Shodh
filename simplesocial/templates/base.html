@@ -76,6 +76,10 @@
         <!-- Header Links Start -->
         {% if user.is_authenticated %}
         <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
           <a href="{% url 'posts:create' %}">Apply</a>
         </div>
         <div class="header-links col-auto order-lg-3">
@@ -87,11 +91,8 @@
         {% else %}
 
         <div class=" header-links col-auto order-lg-3">
-              <a href="{% url 'accounts:login' %}" data-toggle="modal" data-target="#loginSignupModal"
-                data-target-sub="#login">Login</a>
-              <span>or</span>
-              <a href="{% url 'accounts:signup' %}" data-toggle="modal" data-target="#loginSignupModal"
-                data-target-sub="#signup">Sign up</a>
+          <a href="{% url 'django_auth_adfs:login' %}" > Login</a>
+
         </div><!-- Header Links End -->
         {% endif %}
 
@@ -124,6 +125,8 @@
         <div class="offcanvas-menu">
           <nav>
             <ul>
+            
+
               <li><a href="{% url 'posts:create' %}">Apply</a>
               </li>
               <li><a href="{% url 'groups:all' %}">Interns</a>

@@ -1,29 +1,146 @@
 
+{% extends "base.html" %}
 {% block content %}
+<div style="padding-top: 7%;">
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row mb-n5">
 
-    <ul>
-    {{object.name}}
+                <div class="col-lg-8 col-12 mb-5 pr-lg-5">
 
-    </ul>
-    <ul>
-        {{object.position}}
+                    <!-- Company Details Start -->
+                    <div class="company-details">
 
-        </ul>
+                        <h4 class="mb-3"> {{object.user}}</h4>
+                        {% if object.position == "stud" %}
+                        <h5 class="mb-3"> Student </h5>
+                        {% elif object.position == "prof" %}
+                        <h5 class="mb-3"> Faculty </h5>
+                        {% elif object.position == "alumnus" %}
+                        <h5 class="mb-3"> Alumni </h5>
+                        {% endif %}
 
-        <ul>
-            {{object.user}}
-
-            </ul>
-            <ul>
-                {{object.photo}}
-
-                </ul>
+                        
 
 
+                        <!-- <h1>You have been selected for the following jobs:</h1>
+                        <h2>{{object.job1.name}}</h2>
+                        <h2>{{object.job2.name}}</h2>
+                        <h2>{{object.job3.name}}</h2> -->
 
+                    </div>
+                    <!-- Company Details Start -->
+
+                    <!-- Job List Wrap Start -->
+                    <div class="job-list-wrap mt-5">
+
+                        <!-- Job List Start -->
+                        <a href="https://demo.hasthemes.com/keller-preview/keller/job-single.html" class="job-list">
+                            <div class="company-logo col-auto">
+                                <img src="./companypage_files/company-1.png" alt="Company Logo">
+                            </div>
+                            <div class="salary-type col-auto order-sm-3">
+                                <span class="salary-range">$5000 - $8000</span>
+                                <span class="badge badge-success">Full Time</span>
+                            </div>
+                            <div class="content col">
+                                <h6 class="title">Full Stack Backend Developer</h6>
+                                <ul class="meta">
+                                    <li><strong class="text-primary">Envato</strong></li>
+                                    <li><i class="fa fa-map-marker"></i> 2020 Willshire Glen, GA-30009</li>
+                                </ul>
+                            </div>
+                        </a>
+                        <!-- Job List Start -->
+
+                        <!-- Job List Start -->
+                        <a href="https://demo.hasthemes.com/keller-preview/keller/job-single.html" class="job-list">
+                            <div class="company-logo col-auto">
+                                <img src="./companypage_files/company-1.png" alt="Company Logo">
+                            </div>
+                            <div class="salary-type col-auto order-sm-3">
+                                <span class="salary-range">$7000 - $13000</span>
+                                <span class="badge badge-warning">Part Time</span>
+                            </div>
+                            <div class="content col">
+                                <h6 class="title">Product UI &amp; UX Expert</h6>
+                                <ul class="meta">
+                                    <li><strong class="text-primary">Envato</strong></li>
+                                    <li><i class="fa fa-map-marker"></i> 2020 Willshire Glen, GA-30009</li>
+                                </ul>
+                            </div>
+                        </a>
+                        <!-- Job List Start -->
+
+                    </div>
+                    <!-- Job List Wrap Start -->
+
+                </div>
+
+                <!-- Company Sidebar Wrap Start -->
+                <div class="col-lg-4 col-12 mb-5">
+                    <div class="sidebar-wrap">
+                        <!-- Sidebar (Company) Start -->
+                        <div class="sidebar-widget">
+                            <div class="inner">
+                                <div class="sidebar-company">
+                                    <span class="company-logo"><img src="./companypage_files/company-1.png"
+                                            alt="company-1"></span>
+                                    <h6 class="title"> {{object.user}} </h6>
+                                    <ul>
+                                        <li><strong>Skills:</strong> <a
+                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Website</a>,
+                                            <a
+                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Software</a>
+                                        </li>
+                                        <li><strong>Founded:</strong> 2006</li>
+                                        <li><strong>Linkedin:</strong> <a
+                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html">envato.com</a>
+                                        </li>
+                                        <li><strong>Location:</strong> Melbourne, Australia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sidebar (Company) End -->
+
+                    </div>
+                </div>
+                <!-- Company Sidebar Wrap End -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Company List End -->
+
+    <!-- Footer Top Section Start -->
+    <!-- Footer Top Section End -->
+
+    <!-- JS
+============================================ -->
+
+    <!-- Google Map API JS -->
+    <script src="./companypage_files/js"></script>
+
+    <!-- Vendors JS -->
+    <script src="./companypage_files/modernizr-3.6.0.min.js.download"></script>
+    <script src="./companypage_files/jquery-3.4.1.min.js.download"></script>
+    <script src="./companypage_files/bootstrap.bundle.min.js.download"></script>
+
+    <!-- Plugins JS -->
+    <script src="./companypage_files/slick.min.js.download"></script>
+    <script src="./companypage_files/jquery.waypoints.min.js.download"></script>
+    <script src="./companypage_files/jquery.counterup.min.js.download"></script>
+    <script src="./companypage_files/jquery.parallax.js.download"></script>
+    <script src="./companypage_files/jquery.ajaxchimp.min.js.download"></script>
+    <script src="./companypage_files/ion.rangeSlider.min.js.download"></script>
+    <script src="./companypage_files/jquery.scrollUp.min.js.download"></script>
+
+    <!-- Main Activation JS -->
+    <script src="./companypage_files/main.js.download"></script><a id="scrollUp"
+        href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#top"
+        style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-long-arrow-up"></i></a>
+
+
+</div>
 {% endblock %}
-
-<h1>You have been selected for the following jobs:</h1>
-    <h2>{{object.job1.name}}</h2>    
-    <h2>{{object.job2.name}}</h2>    
-    <h2>{{object.job3.name}}</h2>    

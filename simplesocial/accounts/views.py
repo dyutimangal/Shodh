@@ -22,6 +22,7 @@ class SignUp(CreateView):
 
 class profile(DetailView):
     models= models.UserProfile
+
     template_name= 'accounts/profile_detail.html' 
     queryset= UserProfile.objects.all()
     context = {
@@ -32,12 +33,13 @@ class profile(DetailView):
     
 
 class Editprofile(UpdateView):
+    
     models= models.UserProfile
     template_name= 'accounts/editprofile.html' 
 
     success_url='/test/'
     queryset= UserProfile.objects.all()
-    fields = ( "position", "photo")
+    fields = ( "position", "photo","username")
     model = UserProfile
 
     def form_valid(self, form):

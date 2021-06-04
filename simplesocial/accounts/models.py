@@ -17,18 +17,13 @@ class UserProfile(models.Model):
     slug = models.SlugField(allow_unicode=True, unique=True,  default=None)
     position= models.CharField(max_length=255, choices=POSITION_CHOICES, default='stud')
     photo= models.ImageField(default= None)
+    username = models.CharField(max_length=256)
 
-    job1 =  models.ForeignKey(Group,on_delete=models.SET_NULL , related_name="job1", default=None, null=True)
-    job2 =  models.ForeignKey(Group,on_delete=models.SET_NULL , related_name="job2", default=None, null=True)
-    job3 =  models.ForeignKey(Group,on_delete=models.SET_NULL , related_name="job3", default=None, null=True)
-
-
-
-    def str(self):
-        return "@{}".format(self.user.username)
-
+    
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.user.username)
+        kc = self.username
+        print(kc)
+        self.slug = slugify(kc)
         super().save(*args, **kwargs)
 
 
