@@ -10,8 +10,10 @@
 
                     <!-- Company Details Start -->
                     <div class="company-details">
+                    <a href="{% url 'accounts:update' slug=user.userprofile.username %}">Edit porfile</a>
+                            <h4 class="mb-3"> {{object.user.userprofile.username}}</h4>
 
-                        <h4 class="mb-3"> {{object.user}}</h4>
+
                         {% if object.position == "stud" %}
                         <h5 class="mb-3"> Student </h5>
                         {% elif object.position == "prof" %}

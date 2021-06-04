@@ -25,11 +25,13 @@ class Post(models.Model):
     name = models.CharField(max_length=255, default=None, null=True)    
     year = models.CharField(max_length=255, choices=YEAR_CHOICES, default='na', null=True)
     qualifications= models.TextField(blank=True, default='', null=True)
+    qual_html= models.TextField(blank=True, default='', null=True, editable=False)
     def __str__(self):
         return self.message
 
     def save(self, *args, **kwargs):
         self.message_html = misaka.html(self.message)
+        self.qual_html = misaka.html(self.qualifications)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):

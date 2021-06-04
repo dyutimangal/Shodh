@@ -36,8 +36,8 @@ class Editprofile(UpdateView):
     
     models= models.UserProfile
     template_name= 'accounts/editprofile.html' 
-
-    success_url='/test/'
+    print("debug")
+    success_url='/groups/'
     queryset= UserProfile.objects.all()
     fields = ( "position", "photo","username")
     model = UserProfile

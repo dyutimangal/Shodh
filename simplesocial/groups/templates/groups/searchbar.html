@@ -104,7 +104,7 @@
 		<div class="content">
 			{% if user.is_authenticated %}
 			<h5 class="title">
-				Logged in as <a href="{% url 'posts:for_user' username=user.username %}">@{{user.username }}</a>
+				Logged in as <a href="{% url 'posts:for_user' username=user.userprofile.username %}">@{{user.userprofile.username  }}</a>
 			</h5>
 
 			{% endif %}

@@ -12,5 +12,7 @@ urlpatterns = [
 
     path(r"profile/(?P<slug>[-\w]+)/", views.profile.as_view(), name = "profile"),
     #path(r"update/<int:pk>", views.Editprofile.as_view(), ),
-    url(r"^update/(?P<slug>[-\w]+)/$",views.Editprofile.as_view(), name="update"),
+    
+    path(r"update/(?P<slug>[-\w]+)/", views.Editprofile.as_view(), name = "update"),
+
 ]
