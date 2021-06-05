@@ -15,7 +15,12 @@ from . import models
 def searchbar(request):
     if(request.method=="POST"):
         searched=request.POST.get("searchbar")
-        groupss=Group.objects.filter(name__contains=searched)
+        field = request.POST.get("fieldofjob")
+        # print(type(field))
+        if field == 'all':
+            groupss=Group.objects.filter(name__contains=searched)
+        else :
+            groupss=Group.objects.filter(name__contains=searched, field_of_job__contains =field)
         return render(request,'groups/searchbar.html',{'searched':searched, 'groupss':groupss})
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):

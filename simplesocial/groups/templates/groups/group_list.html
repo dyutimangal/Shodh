@@ -3,100 +3,6 @@
 {% block pregroup %}
 <div class="row">
 
-	<!-- Job Sidebar Wrap Start -->
-	<!-- <div class="col-lg-4 col-12 mb-5">
-	<div class="sidebar-wrap"> 
-		 Sidebar (Search) Start -->
-	<!-- <div class="sidebar-widget">
-	<div class="inner">
-		<h6 class="title">Search Keywords</h6>
-		<form action="https://demo.hasthemes.com/keller-preview/keller/job-list.html#">
-			<input type="text" placeholder="e.g. web design">
-		</form>
-	</div>
-</div> -->
-
-	<!-- Sidebar (Search) End -->
-
-	<!-- Sidebar (Category) Start -->
-	<!-- <div class="sidebar-widget">
-			<div class="inner">
-				<h6 class="title">Category</h6>
-				<form action="https://demo.hasthemes.com/keller-preview/keller/job-list.html#">
-					<select>
-						<option value="1">Any category</option>
-						<option value="2">Web Designer</option>
-						<option value="3">Web Developer</option>
-						<option value="4">Graphic Designer</option>
-						<option value="5">App Developer</option>
-						<option value="6">UI &amp; UX Expert</option>
-					</select>
-				</form>
-			</div>
-		</div> -->
-	<!-- Sidebar (Category) End -->
-
-
-
-
-	<!-- Sidebar (Date Posted) Start -->
-	<!-- <div class="sidebar-widget">
-			<div class="inner">
-				<h6 class="title">Date Posted</h6>
-				<form action="https://demo.hasthemes.com/keller-preview/keller/job-list.html#" class="mb-n1">
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted0">
-						<label class="custom-control-label" for="jobDatePosted0">Any Date</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted1">
-						<label class="custom-control-label" for="jobDatePosted1">Last Hour</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted2">
-						<label class="custom-control-label" for="jobDatePosted2">Last 24 Hours</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted3">
-						<label class="custom-control-label" for="jobDatePosted3">Last 7 Days</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted4">
-						<label class="custom-control-label" for="jobDatePosted4">Last 14 days</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobDatePosted" id="jobDatePosted5">
-						<label class="custom-control-label" for="jobDatePosted5">Last 30 days</label>
-					</div>
-				</form>
-			</div>
-		</div> -->
-	<!-- Sidebar (Date Posted) End -->
-
-	<!-- Sidebar (Qualification) Start -->
-	<!-- <div class="sidebar-widget">
-			<div class="inner">
-				<h6 class="title">Qualification</h6>
-				<form action="https://demo.hasthemes.com/keller-preview/keller/job-list.html#" class="mb-n1">
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification0">
-						<label class="custom-control-label" for="jobQualification0">Matriculation</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification1">
-						<label class="custom-control-label" for="jobQualification1">Intermidiate</label>
-					</div>
-					<div class="custom-control custom-radio mb-1">
-						<input type="radio" class="custom-control-input" name="jobQualification" id="jobQualification2">
-						<label class="custom-control-label" for="jobQualification2">Gradute</label>
-					</div>
-				</form>
-			</div>
-		</div> -->
-	<!-- Sidebar (Qualification) End -->
-	<!-- </div> -->
-	<!-- </div> -->
-
 	<!-- Job Sidebar Wrap End -->
 
 	<div class="col-md-4" style="padding-top: 15%; padding-bottom: 5%;">
@@ -113,6 +19,16 @@
 					{% csrf_token%}
 
 					<input type="text" placeholder="e.g. web design" name="searchbar">
+					<div style="padding-top: 5%;">
+					<select name="fieldofjob"> 
+						  <option value="all">Any category</option>
+						  <option value="ml">Machine Learning</option>
+						  <option value="appd">App Development</option>
+						  <option value="webdf">Frontend Web Developmentr</option>
+						  <option value="webdb">Backend Web Development</option>
+						  <option value="sde">Software Development</option>
+					</select>
+				</div>
 				</form>
 			</div>
 

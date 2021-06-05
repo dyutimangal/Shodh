@@ -92,31 +92,29 @@
         </div>
         <!-- Offcanvas Toggle End -->
 
-        <!-- Header Links Start -->
-        {% if user.is_authenticated %}
-        <div class="header-links col-auto order-lg-3">
-          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
-        </div>
-        <div class="header-links col-auto order-lg-3">
-          <a href="{% url 'posts:create' %}">Apply</a>
-        </div>
-        <div class="header-links col-auto order-lg-3">
-          <a href="{% url 'groups:all' %}" ">Interns</a>
-        </div>
-        <div class=" header-links col-auto order-lg-3">
-            <a href="{% url 'groups:create' %}" ">Recruit</a>
-        </div>
-        {% else %}
+       <!-- Header Links Start -->
+       {% if user.is_authenticated %}
+       <div class="header-links col-auto order-lg-3">
+         
+         <a href="{% url 'posts:create' %}">Apply</a>
+       </div>
+       <div class="header-links col-auto order-lg-3">
+         <a href="{% url 'groups:all' %}" ">Interns</a>
+       </div>
+       <div class=" header-links col-auto order-lg-3">
+           <a href="{% url 'groups:create' %}" ">Recruit</a>
+       </div>
 
-        <div class=" header-links col-auto order-lg-3">
-              <a href="{% url 'accounts:login' %}" data-toggle="modal" data-target="#loginSignupModal"
-                data-target-sub="#login">Login</a>
-              <span>or</span>
-              <a href="{% url 'accounts:signup' %}" data-toggle="modal" data-target="#loginSignupModal"
-                data-target-sub="#signup">Sign up</a>
-        </div><!-- Header Links End -->
-        {% endif %}
+       <div class="header-links col-auto order-lg-3">
+         <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+       </div>
+       {% else %}
 
+       <div class=" header-links col-auto order-lg-3">
+         <a href="{% url 'django_auth_adfs:login' %}" > Login</a>
+
+       </div><!-- Header Links End -->
+       {% endif %}
 
       </div>
 
@@ -130,34 +128,40 @@
     <div class="offcanvas-wrap">
       <div class="inner">
 
-        <!-- Offcanvas user Start -->
+         <!-- Offcanvas user Start -->
 
-        {% if user.is_authenticated %}
-        {% else %}
-        <div class="offcanvas-user">
-          <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Login</a>
-          <span>or</span>
-          <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Sign up</a>
-        </div>
-        {% endif %}
-        <!-- Offcanvas user End -->
-
-        <!-- Offcanvas Menu Start -->
-        <div class="offcanvas-menu">
-          <nav>
-            <ul>
-              <li><a href="{% url 'posts:create' %}">Apply</a>
-              </li>
-              <li><a href="{% url 'groups:all' %}">Interns</a>
-              </li>
-              <li><a href="{% url 'groups:create' %}">Recruit</a>
-              </li>
-              <!-- <li><a href="{% url 'groups:all' %}">Contact us</a>
-              </li> -->
-            </ul>
-          </nav>
-        </div>
-        <!-- Offcanvas Menu End -->
+         {% if user.is_authenticated %}
+         {% else %}
+         <div class="offcanvas-user">
+           <a href="{% url 'django_auth_adfs:login' %}">Login</a>
+             </div>
+         {% endif %}
+         <!-- Offcanvas user End -->
+ 
+         <!-- Offcanvas Menu Start -->
+         <div class="offcanvas-menu">
+           <nav>
+             <ul>
+             
+ 
+               {% if user.is_authenticated %}
+ 
+               <li><a href="{% url 'posts:create' %}">Apply</a>
+               </li>
+               <li><a href="{% url 'groups:all' %}">Interns</a>
+               </li>
+               <li><a href="{% url 'groups:create' %}">Recruit</a>
+               </li>
+               <li><a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+               </li>
+               {% else %}
+               <li><a href="{% url 'django_auth_adfs:login' %}">Login</a>
+               </li>
+               {% endif %}
+             </ul>
+           </nav>
+         </div>
+         <!-- Offcanvas Menu End -->
 
       </div>
     </div>
@@ -170,8 +174,8 @@
       style="background-image: url({% static 'images/cover.jpg' %});  background-position: 50% 0px;">
       <div class="container">
         <div class="slider-content text-center">
-          <h2 class="title">Find Your Next Project</h2>
-          <p>More then <span>1,524</span> job listed here.</p>
+          <h2 class="title">Shodh</h2>
+          <p>Find Your Next Intern Here</p>
         </div>
       </div>
     </div>
@@ -185,28 +189,32 @@
 
         <!-- Job Search Form Start -->
         <div class="job-search-form">
-          <form action="https://demo.hasthemes.com/keller-preview/keller/index.html#">
+          <form action="{% url 'groups:searchbar' %}" method="POST">
+            {% csrf_token%}
+  
             <div class="row mb-n4">
 
               <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
-                <input type="text" placeholder="e.g. web design">
+                <input type="text" placeholder="e.g. web design" name="searchbar">
               </div>
 
 
               <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
-                <select>
-                  <option value="1">Any category</option>
-                  <option value="2">Web Designer</option>
-                  <option value="3">Web Developer</option>
-                  <option value="4">Graphic Designer</option>
-                  <option value="5">App Developer</option>
-                  <option value="6">UI &amp; UX Expert</option>
+                <select name="fieldofjob"> 
+                  <option value="all">Any category</option>
+                  <option value="ml">Machine Learning</option>
+                  <option value="appd">App Development</option>
+                  <option value="webdf">Frontend Web Developmentr</option>
+                  <option value="webdb">Backend Web Development</option>
+                  <option value="sde">Software Development</option>
                 </select>
               </div>
 
               <div class="col-lg-auto col-sm-6 col-12 flex-grow-1 mb-4">
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" >Search</button>
+              
               </div>
+
 
             </div>
           </form>

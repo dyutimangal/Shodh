@@ -76,9 +76,6 @@
         <!-- Header Links Start -->
         {% if user.is_authenticated %}
         <div class="header-links col-auto order-lg-3">
-          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
-        </div>
-        <div class="header-links col-auto order-lg-3">
           
           <a href="{% url 'posts:create' %}">Apply</a>
         </div>
@@ -87,6 +84,10 @@
         </div>
         <div class=" header-links col-auto order-lg-3">
             <a href="{% url 'groups:create' %}" ">Recruit</a>
+        </div>
+
+        <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
         </div>
         {% else %}
 
@@ -114,10 +115,8 @@
         {% if user.is_authenticated %}
         {% else %}
         <div class="offcanvas-user">
-          <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Login</a>
-          <span>or</span>
-          <a href="https://demo.hasthemes.com/keller-preview/keller/index.html#">Sign up</a>
-        </div>
+          <a href="{% url 'django_auth_adfs:login' %}">Login</a>
+            </div>
         {% endif %}
         <!-- Offcanvas user End -->
 
@@ -127,14 +126,20 @@
             <ul>
             
 
+              {% if user.is_authenticated %}
+
               <li><a href="{% url 'posts:create' %}">Apply</a>
               </li>
               <li><a href="{% url 'groups:all' %}">Interns</a>
               </li>
               <li><a href="{% url 'groups:create' %}">Recruit</a>
               </li>
-              <!-- <li><a href="{% url 'groups:all' %}">Contact us</a>
-              </li> -->
+              <li><a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+              </li>
+              {% else %}
+              <li><a href="{% url 'django_auth_adfs:login' %}">Login</a>
+              </li>
+              {% endif %}
             </ul>
           </nav>
         </div>

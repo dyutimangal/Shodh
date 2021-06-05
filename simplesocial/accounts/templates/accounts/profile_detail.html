@@ -10,7 +10,7 @@
 
                     <!-- Company Details Start -->
                     <div class="company-details">
-                    <a href="{% url 'accounts:update' slug=user.userprofile.username %}">Edit porfile</a>
+                    <a href="{% url 'accounts:update' slug=user.userprofile.username %}">Edit profile</a>
                             <h4 class="mb-3"> {{object.user.userprofile.username}}</h4>
 
 
@@ -86,8 +86,7 @@
                         <div class="sidebar-widget">
                             <div class="inner">
                                 <div class="sidebar-company">
-                                    <span class="company-logo"><img src="./companypage_files/company-1.png"
-                                            alt="company-1"></span>
+                                    <span class="company-logo"><img src="{{ object.photo.url }}" alt="company-1"></span>
                                     <h6 class="title"> {{object.user}} </h6>
                                     <ul>
                                         <li><strong>Skills:</strong> <a
