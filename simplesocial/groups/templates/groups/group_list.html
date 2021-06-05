@@ -70,19 +70,6 @@
 					</ul>
 				</div>
 			</a>
-			<!-- <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
-			<h3 class="title list-group-item-heading">{{ group.name }}</h3>
-			<div class="list-group-item-text container-fluid">
-				{{ group.description_html|safe }}
-				<div class="row">
-					<div class="col-md-4">
-						Created by<span class="badge"> {{ group.creator }} </span>
-						Number of Application{{ group.posts.count|pluralize }} <span class="badge">{{ group.posts.count
-							}}</span>
-					</div>
-				</div>
-			</div>
-		</a> -->
 			{% endfor %}
 		</div>
 	</div>

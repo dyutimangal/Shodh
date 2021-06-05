@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'groups',
     'posts',
     'django_auth_adfs',
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [

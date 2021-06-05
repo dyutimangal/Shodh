@@ -39,9 +39,9 @@ class Editprofile(UpdateView):
     print("debug")
     success_url='/groups/'
     queryset= UserProfile.objects.all()
-    fields = ( "position", "photo","username")
+    fields = ( "name",  "username", "position", "gender", "branch", "cpi", "photo", "aboutme", "linkedin")
     model = UserProfile
-
+    select_related = ("post")
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user

@@ -9,6 +9,9 @@ from braces.views import SelectRelatedMixin
 from . import forms
 from . import models
 
+
+from accounts.models import UserProfile 
+
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -52,7 +55,7 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     # form_class = forms.PostForm
     # fields = ('message','group')
-    fields = ("group","name","year","message","qualifications")
+    fields = ("name", "group","year","message","qualifications","contact_number","email_ID","answer_to_questions_if_any","resume")
     model = models.Post
 
     # def get_form_kwargs(self):
@@ -61,6 +64,7 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     #     return kwargs
     success_url='/groups/'
     def form_valid(self, form):
+        # self.object.name = self.request.user.userprofile.name
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()

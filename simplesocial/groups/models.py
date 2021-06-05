@@ -20,13 +20,6 @@ FIELD_CHOICES=(
     ('sde','SDE'),
 )
 
-SKILL_CHOICES=(
-    ('react','REACT'),
-    ('python', 'PYTHON'),
-    ('java','JAVA'),
-    ('django','DJANGO'),
-    ('js','JS'),
-)
 
 class Group(models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE, related_name="group_creator")
@@ -36,17 +29,15 @@ class Group(models.Model):
     description_html = models.TextField(editable=False, default='', blank=True)
     #cpi_cutoff = models.DecimalField(max_digits=3, decimal_places=2)
     field_of_job= models.CharField(max_length=255, choices=FIELD_CHOICES, default='sde')
-    skills_required=models.CharField(max_length=255,choices=SKILL_CHOICES, default='js')
-    duration = models.TextField(blank=True, default='', null=True)
-    stipend = models.TextField(blank=True, default='', null=True)
-    expected_qualifications= models.TextField(blank=True, default='', null=True)
+    duration = models.CharField(max_length=255, blank=True, default='', null=True)
+    stipend = models.CharField(max_length=255, blank=True, default='', null=True)
+    expected_qualifications = models.TextField(blank=True, default='', null=True)
     apply_by = models.CharField(max_length=255,blank=True, default='', null=True)
     start_date= models.CharField(max_length=255,blank=True, default='', null=True)
+    additional_questions_to_applicant = models.TextField(blank=True, default='', null=True)
+    location = models.CharField(max_length=255, blank=True, default='', null=True)
+    vacancy = models.PositiveIntegerField(blank=True, default=1, null=True)
 
-    selected1 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected1", default=None, null=True)
-    selected2 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected2", default=None, null=True)
-    selected3 =  models.ForeignKey(User,on_delete=models.SET_NULL , related_name="selected3", default=None, null=True)
-    selected_count= models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
