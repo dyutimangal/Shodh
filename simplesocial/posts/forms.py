@@ -5,7 +5,7 @@ from posts import models
 
 class PostForm(forms.ModelForm):
     class Meta:
-        fields = ("message", "group")
+        fields = ("message", "group", "resume")
         model = models.Post
 
     def __init__(self, *args, **kwargs):

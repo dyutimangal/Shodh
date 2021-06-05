@@ -1,22 +1,27 @@
 
 <div class="post media" style="padding-bottom:5%;">
   
-
-	
 	<div class="media-body">
 		<h6>
-			<strong><a href="{% url 'posts:for_user' username=post.user.userprofile.username %}">@{{ post.user.userprofile.username }}</a></strong>
-			<time class="time"><a href="{% url 'posts:single' username=post.user.userprofile.username pk=post.pk %}">{{ post.created_at }}</a></time>
+			<strong>Your Username : </strong><a href="{% url 'accounts:profile' slug=user.userprofile.username %}">@{{ post.user.userprofile.username }}</a>
+			<br/>
+			<strong>Applied on : </strong><time class="time">{{ post.created_at }}</time>
 		</h6>
 		<h4 class="media-heading">
 			
-			{% if post.group %}
+			<!-- {% if post.group %}
 			<span class="group-name"><a href="#">{{ post.group.name }}</a></span>
-			{% endif %}
+			{% endif %} -->
 		</h4>
 		<div style="padding-top:3%">
-			<div><h6><span style="font-weight: 600;">Your Name : </span><span style="font-weight: 400;">{{ post.name }}</span></h6></div>
-			<div style="padding-top:2%"><h6><span style="font-weight: 600;">Current Year : </span><span style="font-weight: 400;">{{ post.year }}</span></h6></div>
+			<h6>
+				<div><span style="font-weight: 600;">Your Name : </span><span style="font-weight: 400;">{{ post.name }}</span></div>
+				<div><span style="font-weight: 600;">Current Year : </span><span style="font-weight: 400;">{{ post.year }}</span></div>
+				<div><span style="font-weight: 600;">Contact Number : </span><span style="font-weight: 400;">{{ post.contact_number }}</span></div>
+				<div><span style="font-weight: 600;">Email ID : </span><span style="font-weight: 400;">{{ post.email_ID }}</span></div>
+				<div><span style="font-weight: 600;">Resume Uploaded : </span><a href = "{{ post.resume.url }}" style="text-decoration: underline;"><span style="font-weight: 400;">Click Here</span></a></div>
+
+			</h6>
 			<div style="padding-top:2%">
 				<h6 style="display: inline; font-weight: 600;">Your Message : </h6>
 				<p style="display: inline;">{{ post.message_html | safe }}</p>
@@ -25,14 +30,11 @@
 				<h6 style="display: inline; font-weight: 600;">Your Qualifications : </h6>
 				<p style="display: inline;">{{ post.qual_html | safe}}</p>
 			</div>
+			<div style="padding-top:2%">
+				<h6 style="display: inline; font-weight: 600;">Your Answer to Additional Questions (if any) : </h6>
+				<p style="display: inline;">{{ post.answer_to_questions_if_any_html | safe}}</p>
+			</div>
 		</div>
-		
-		
-		
-
-
-
-
 		<div class="media-footer" style="padding-top:2%">
 			{% if user.is_authenticated and post.user == user and not hide_delete %}
 				<button type="button" class="btn btn-md btn-danger">

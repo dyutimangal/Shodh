@@ -11,30 +11,20 @@
 
                     <!-- Company Details Start -->
                     <div class="company-details">
-                    <a href="{% url 'accounts:update' slug=user.userprofile.username %}">Edit profile</a>
-                            <h4 class="mb-3"> {{object.user.userprofile.username}}</h4>
-
-
-                        {% if object.position == "stud" %}
-                        <h5 class="mb-3"> Student </h5>
-                        {% elif object.position == "prof" %}
-                        <h5 class="mb-3"> Faculty </h5>
-                        {% elif object.position == "alumnus" %}
-                        <h5 class="mb-3"> Alumni </h5>
-                        {% endif %}
-
-                        
-
-
-                        <!-- <h1>You have been selected for the following jobs:</h1>
-                        <h2>{{object.job1.name}}</h2>
-                        <h2>{{object.job2.name}}</h2>
-                        <h2>{{object.job3.name}}</h2> -->
-
+                    <h3 class="mb-3">{{ object.name }}</h3>
+                    <h4 class="mb-3">Username : {{object.user.userprofile.username}}</h4>
+                    {% if object.position == "stud" %}
+                        <h5 class="mb-3">Position :  Student </h5>
+                    {% elif object.position == "prof" %}
+                        <h5 class="mb-3">Position :  Faculty </h5>
+                    {% elif object.position == "alumnus" %}
+                        <h5 class="mb-3">Position :  Alumni </h5>
+                    {% endif %}                    
                     </div>
                     <!-- Company Details Start -->
-
-
+                    <div class="company-details">
+                        {{ object.aboutme }}         
+                    </div>
                 </div>
 
                 <!-- Company Sidebar Wrap Start -->
@@ -45,21 +35,31 @@
                             <div class="inner">
                                 <div class="sidebar-company">
                                     <span class="company-logo"><img src="{{ object.photo.url }}" alt="company-1"></span>
-                                    <h6 class="title"> {{object.user}} </h6>
+                                    <h6 class="title"> {{object.name}} </h6>
                                     <ul>
+                                        <li><strong>Branch:</strong> {{ object.branch }}</li>
+                                        <li><strong>Gender:</strong> {{ object.gender }}</li>
+                                        <li><strong>CPI:</strong> {{ object.cpi }}</li>
                                         <li><strong>Skills:</strong> <a
                                                 href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Website</a>,
                                             <a
                                                 href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Software</a>
                                         </li>
                                         <li><strong>Founded:</strong> 2006</li>
-                                        <li><strong>Linkedin:</strong> <a
-                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html">envato.com</a>
+                                        <li><strong>Linkedin:</strong> <a href="{{object.linkedin}}">{{object.linkedin}}</a>
                                         </li>
-                                        <li><strong>Location:</strong> Melbourne, Australia</li>
                                     </ul>
                                 </div>
+
+                            
                             </div>
+                            
+                        <div class="inner">
+							<div class="col-xl-auto col-lg-12 col-sm-auto col-12 p-2">
+								<a href="{% url 'accounts:update' slug=user.userprofile.username %}"><button type="button" class="btn btn-info">Edit Profile</button></a>
+                           </div>
+
+						</div>
                         </div>
                         <!-- Sidebar (Company) End -->
 

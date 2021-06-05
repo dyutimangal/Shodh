@@ -52,19 +52,22 @@
 
 			{% for group in groupss %}
 			<a class="list-group-item job-list" href="{% url 'groups:single' slug=group.slug %}">
-				<div class="company-logo col-auto">
-					<img src="{% static 'Keller - Job Board HTML Template_files/company-5.png' %}" alt="Company Logo">
-				</div>
+				
 				<div class="salary-type col-auto order-sm-3">
-					<span class="salary-range">{{ group.income }}</span>
-					<span class="badge badge-success">{{ group.workstatus }}</span>
+					<span class="salary-range">{{ group.stipend }}</span>
+
+					{% if group.workstatus == "pt" %}
+					<span class="badge badge-success">Part-Time</span>
+					{% else %}
+					<span class="badge badge-success">Full-Time</span>
+					{% endif %}
 					<!-- <span class="badge badge-success">FullTime</span> -->
 				</div>
 				<div class="content col">
 					<h5 class="title">{{ group.name }}</h5>
 					<ul class="meta">
 						<!-- <h6>{{ group.description_html|safe }}</h6> -->
-						<li><strong class="text-primary"> Created by <span class="badge"> {{ group.creator }}
+						<li><strong class="text-primary"> Created by <span class="badge"> {{ group.creator.userprofile.name }}
 								</span></strong>
 						</li>
 						<li>Number of Application{{ group.posts.count|pluralize }} <span class="badge">
@@ -72,20 +75,9 @@
 					</ul>
 				</div>
 			</a>
-			<!-- <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
-			<h3 class="title list-group-item-heading">{{ group.name }}</h3>
-			<div class="list-group-item-text container-fluid">
-				{{ group.description_html|safe }}
-				<div class="row">
-					<div class="col-md-4">
-						Created by<span class="badge"> {{ group.creator }} </span>
-						Number of Application{{ group.posts.count|pluralize }} <span class="badge">{{ group.posts.count
-							}}</span>
-					</div>
-				</div>
-			</div>
-		</a> -->
 			{% endfor %}
+			<h4>Click <a href="{% url 'groups:all' %} ">here</a> to return back
+			</h4>
 			{% else %}
 			<h2> Sorry Could'nt Find Any Such Intern</h2>
 			<h4>Try searching with a different term or click <a href="{% url 'groups:all' %} ">here</a> to return back

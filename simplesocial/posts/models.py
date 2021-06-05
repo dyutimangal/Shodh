@@ -30,14 +30,16 @@ class Post(models.Model):
     message = models.TextField()
     message_html = models.TextField(editable=False)
     answer_to_questions_if_any = models.TextField(blank=True, default='', null=True)
-    resume = models.FileField(default= None,null=True)
-    
+    answer_to_questions_if_any_html= models.TextField(blank=True, default='', null=True, editable=False)
+    # resume = models.FileField(default= None,null=True)
+    resume=models.FileField(default= None, null=True,blank=True,upload_to="resumes/")
     def __str__(self):
         return self.message
 
     def save(self, *args, **kwargs):
         self.message_html = misaka.html(self.message)
         self.qual_html = misaka.html(self.qualifications)
+        self.answer_to_questions_if_any_html = misaka.html(self.answer_to_questions_if_any)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):

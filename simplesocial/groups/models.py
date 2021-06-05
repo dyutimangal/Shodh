@@ -20,6 +20,11 @@ FIELD_CHOICES=(
     ('sde','SDE'),
 )
 
+STATUS_CHOICES=(
+    ('ft','Full-Time'),
+    ('pt','Part-Time')
+)
+
 
 class Group(models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE, related_name="group_creator")
@@ -37,7 +42,7 @@ class Group(models.Model):
     additional_questions_to_applicant = models.TextField(blank=True, default='', null=True)
     location = models.CharField(max_length=255, blank=True, default='', null=True)
     vacancy = models.PositiveIntegerField(blank=True, default=1, null=True)
-
+    workstatus = models.CharField(max_length=255, choices=STATUS_CHOICES, default='pt')
 
     def __str__(self):
         return self.name
