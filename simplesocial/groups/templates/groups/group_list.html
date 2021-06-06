@@ -15,7 +15,7 @@
 			{% endif %}
 			<div style="padding-top: 5%; padding-bottom: 15%;">
 				<h3 class="title">Search Keywords</h3>
-				<form action="{% url 'groups:searchbar' %}" method="POST">
+				<form action="{% url 'groups:searchbar' %}" method="POST" id="form1">
 					{% csrf_token%}
 
 					<input type="text" placeholder="e.g. web design" name="searchbar">
@@ -30,6 +30,10 @@
 					</select>
 				</div>
 				</form>
+				<div style="padding-top: 5%; padding-bottom: 10%;">
+					<button form="form1" type="submit" class="btn btn-md btn-fill btn-info"><span
+							class="glyphicon glyphicon-plus-sign"></span> Search</button>
+				</div>
 			</div>
 
 		</div>
