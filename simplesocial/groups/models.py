@@ -60,6 +60,8 @@ class Group(models.Model):
     btp=models.BooleanField(default=False, null=True, blank=True)
     branch = models.CharField(max_length=255, choices=BRANCH_CHOICES, default='na')
 
+    finished=models.BooleanField(default=False, null=True, blank=True)
+    
     def __str__(self):
         return self.name
 

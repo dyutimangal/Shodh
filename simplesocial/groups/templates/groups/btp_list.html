@@ -55,6 +55,7 @@
 
 			{% for group in object_list %}
             {% if group.btp == True %}
+            {% if group.finished == False %}
 			<a class="list-group-item job-list" href="{% url 'groups:single' slug=group.slug %}">
 				
 				<div class="salary-type col-auto order-sm-3">
@@ -81,6 +82,7 @@
 					</ul>
 				</div>
 			</a>
+            {% endif %}
             {% endif %}
 			{% endfor %}
 		</div>
