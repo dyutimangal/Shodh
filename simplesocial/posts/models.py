@@ -17,6 +17,20 @@ YEAR_CHOICES=(
     ('na','Not Applicable'),
 )
  
+BRANCH_CHOICES=( 
+('bt','Biotech'), 
+('ch', 'Chemical'), 
+('cse','Computer Science'), 
+('mnc','Mathematics'), 
+('ep','Engineering Physics'),
+('ece','Electronics'),
+('ee','Electrical'),
+('me','Mechanical'),
+('cv','Civil'),
+('cst','CST'), 
+('na','Not Applicable') 
+)
+
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE, related_name="posts")
     created_at = models.DateTimeField(auto_now=True)
@@ -31,6 +45,7 @@ class Post(models.Model):
     message_html = models.TextField(editable=False)
     answer_to_questions_if_any = models.TextField(blank=True, default='', null=True)
     answer_to_questions_if_any_html= models.TextField(blank=True, default='', null=True, editable=False)
+    branch = models.CharField(max_length=255, choices=BRANCH_CHOICES, default='na')
     # resume = models.FileField(default= None,null=True)
     resume=models.FileField(default= None, null=True,blank=True,upload_to="resumes/")
     def __str__(self):

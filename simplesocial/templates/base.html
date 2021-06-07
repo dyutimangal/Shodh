@@ -77,6 +77,10 @@
         {% if user.is_authenticated %}
         <div class="header-links col-auto order-lg-3">
           
+          <a href="{% url 'groups:btp' %}">B.Tech Projects</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
           <a href="{% url 'posts:all' %}">View your Applications</a>
         </div>
         <div class="header-links col-auto order-lg-3">

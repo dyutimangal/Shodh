@@ -25,7 +25,7 @@ def searchbar(request):
 
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     # fields = ("name", "description", "field_of_job")
-    fields = ("name", "duration", "stipend", "location", "vacancy" ,"workstatus","description", "field_of_job", "expected_qualifications","apply_by", "start_date","additional_questions_to_applicant")
+    fields = ("name", "btp", "branch", "duration", "stipend", "location", "vacancy" ,"workstatus","description", "field_of_job", "expected_qualifications","apply_by", "start_date","additional_questions_to_applicant")
 
     model = Group
     
@@ -44,3 +44,7 @@ class ListGroups(generic.ListView):
 class ListGroups2(generic.ListView):
     model = Group
     template_name="groups/yourlist.html"
+
+class ListGroupsBTP(generic.ListView):
+    model = Group
+    template_name="groups/btp_list.html"

@@ -25,6 +25,20 @@ STATUS_CHOICES=(
     ('pt','Part-Time')
 )
 
+BRANCH_CHOICES=( 
+('bt','Biotech'), 
+('ch', 'Chemical'), 
+('cse','Computer Science'), 
+('mnc','Mathematics'), 
+('ep','Engineering Physics'),
+('ece','Electronics'),
+('ee','Electrical'),
+('me','Mechanical'),
+('cv','Civil'),
+('cst','CST'), 
+('na','Not Applicable') 
+)
+
 
 class Group(models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE, related_name="group_creator")
@@ -43,6 +57,8 @@ class Group(models.Model):
     location = models.CharField(max_length=255, blank=True, default='', null=True)
     vacancy = models.PositiveIntegerField(blank=True, default=1, null=True)
     workstatus = models.CharField(max_length=255, choices=STATUS_CHOICES, default='pt')
+    btp=models.BooleanField(default=False, null=True, blank=True)
+    branch = models.CharField(max_length=255, choices=BRANCH_CHOICES, default='na')
 
     def __str__(self):
         return self.name
