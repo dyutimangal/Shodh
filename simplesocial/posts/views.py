@@ -19,6 +19,7 @@ User = get_user_model()
 class PostList(SelectRelatedMixin, generic.ListView):
     model = models.Post
     select_related = ("user", "group")
+    template_name = "posts/user_post_list.html"
 
 
 class UserPosts(generic.ListView):

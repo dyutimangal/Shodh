@@ -41,3 +41,6 @@ class SingleGroup(generic.DetailView):
 class ListGroups(generic.ListView):
     model = Group
  
+class ListGroups2(generic.ListView):
+    model = Group
+    template_name="groups/yourlist.html"
