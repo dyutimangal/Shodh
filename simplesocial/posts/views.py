@@ -3,14 +3,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.http import Http404
 from django.views import generic
-
+from django.views.generic import UpdateView
 from braces.views import SelectRelatedMixin
-
+from .forms import UpdateForm
+from django.shortcuts import redirect, render
 from . import forms
 from . import models
-
+from django.http import HttpResponseRedirect
 
 from accounts.models import UserProfile 
+from .models import Post 
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -84,3 +86,11 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     def delete(self, *args, **kwargs):
         messages.success(self.request, "Post Deleted")
         return super().delete(*args, **kwargs)
+
+def UpdatePost(request,post_id):
+    post=Post.objects.get(pk=post_id)
+    form=UpdateForm(request.POST or None, instance=post)
+    if form.is_valid():
+        form.save()
+        return redirect('groups:yourall')
+    return render(request,'posts/update_post.html',{'post':post,'form':form})

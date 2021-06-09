@@ -19,7 +19,7 @@
 				<div><span style="font-weight: 600;">Current Year : </span><span style="font-weight: 400;">{{ post.year }}</span></div>
 				<div><span style="font-weight: 600;">Contact Number : </span><span style="font-weight: 400;">{{ post.contact_number }}</span></div>
 				<div><span style="font-weight: 600;">Email ID : </span><span style="font-weight: 400;">{{ post.email_ID }}</span></div>
-				<div><span style="font-weight: 600;">Resume Uploaded : </span><a href = "{{ post.resume.url }}" style="text-decoration: underline;"><span style="font-weight: 400;">Click Here</span></a></div>
+				<div><span style="font-weight: 600;">Resume Uploaded : </span><a href = "" style="text-decoration: underline;"><span style="font-weight: 400;">Click Here</span></a></div> 
 
 			</h6>
 			<div style="padding-top:2%">
@@ -34,7 +34,12 @@
 				<h6 style="display: inline; font-weight: 600;">Your Answer to Additional Questions (if any) : </h6>
 				<p style="display: inline;">{{ post.answer_to_questions_if_any_html | safe}}</p>
 			</div>
+			<div style="padding-top:2%">
+				<h6 style="display: inline; font-weight: 600;">Result : </h6>
+				<p style="display: inline;">{{ post.accepted}}</p>
+			</div>
 		</div>
+
 		<div class="media-footer" style="padding-top:2%">
 			{% if user.is_authenticated and post.user == user and not hide_delete %}
 				<button type="button" class="btn btn-md btn-danger">
@@ -42,11 +47,20 @@
 						Delete
 					</a>
 				</button>
-				<!-- <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-					<span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-					<span class="text-danger icon-label">Delete</span>
-				</a> -->
 			{% endif %}
 		</div>
+
+		<div class="media-footer" style="padding-top:2%">
+			{% if user.is_authenticated and post.group.creator == user %}
+				<button type="button" class="btn btn-md btn-danger">
+					<a href="{% url 'posts:update' post.id %}" title="update">
+						Change Result Status
+					</a>
+				</button>
+			{% endif %}
+		</div>
+		
+	 
+		
 	</div>
 </div>

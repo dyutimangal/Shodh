@@ -48,6 +48,8 @@ class Post(models.Model):
     branch = models.CharField(max_length=255, choices=BRANCH_CHOICES, default='na')
     # resume = models.FileField(default= None,null=True)
     resume=models.FileField(default= None, null=True,blank=True,upload_to="resumes/")
+    accepted=models.CharField(max_length=255, default='Not Decided')
+
     def __str__(self):
         return self.message
 
