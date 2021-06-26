@@ -95,19 +95,27 @@
        <!-- Header Links Start -->
        {% if user.is_authenticated %}
        <div class="header-links col-auto order-lg-3">
-         
-         <a href="{% url 'posts:create' %}">Apply</a>
-       </div>
-       <div class="header-links col-auto order-lg-3">
-         <a href="{% url 'groups:all' %}" ">Interns</a>
-       </div>
-       <div class=" header-links col-auto order-lg-3">
-           <a href="{% url 'groups:create' %}" ">Recruit</a>
-       </div>
+          
+        <a href="{% url 'groups:btp' %}">B.Tech Projects</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
+          <a href="{% url 'posts:all' %}">View your Applications</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
+          <a href="{% url 'groups:yourall' %}">Interns created by you</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'groups:all' %}" ">Interns</a>
+        </div>
+        <div class=" header-links col-auto order-lg-3">
+            <a href="{% url 'groups:create' %}" ">Recruit</a>
+        </div>
 
-       <div class="header-links col-auto order-lg-3">
-         <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
-       </div>
+        <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+        </div>
        {% else %}
 
        <div class=" header-links col-auto order-lg-3">
@@ -146,8 +154,10 @@
  
                {% if user.is_authenticated %}
  
-               <li><a href="{% url 'posts:create' %}">Apply</a>
+               <li><a href="{% url 'groups:btp' %}">B.Tech Projects</a>
                </li>
+               <li><a href="{% url 'posts:all' %}">View your Applications</a></li>
+               <li><a href="{% url 'groups:yourall' %}">Interns created by you</a></li>
                <li><a href="{% url 'groups:all' %}">Interns</a>
                </li>
                <li><a href="{% url 'groups:create' %}">Recruit</a>

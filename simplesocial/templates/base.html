@@ -136,8 +136,10 @@
 
               {% if user.is_authenticated %}
 
-              <li><a href="{% url 'posts:create' %}">Apply</a>
+              <li><a href="{% url 'groups:btp' %}">B.Tech Projects</a>
               </li>
+              <li><a href="{% url 'posts:all' %}">View your Applications</a></li>
+              <li><a href="{% url 'groups:yourall' %}">Interns created by you</a></li>
               <li><a href="{% url 'groups:all' %}">Interns</a>
               </li>
               <li><a href="{% url 'groups:create' %}">Recruit</a>

@@ -16,6 +16,12 @@ YEAR_CHOICES=(
     ('4','4th year'),
     ('na','Not Applicable'),
 )
+
+RESULT_CHOICES=(
+    ('nd','Not Decided'),
+    ('r', 'Rejected'),
+    ('a','Accepted'),
+)
  
 BRANCH_CHOICES=( 
 ('bt','Biotech'), 
@@ -48,7 +54,8 @@ class Post(models.Model):
     branch = models.CharField(max_length=255, choices=BRANCH_CHOICES, default='na')
     # resume = models.FileField(default= None,null=True)
     resume=models.FileField(default= None, null=True,blank=True,upload_to="resumes/")
-    accepted=models.CharField(max_length=255, default='Not Decided')
+    # accepted=models.CharField(max_length=255, default='Not Decided')
+    accepted = models.CharField(max_length=255, choices=RESULT_CHOICES, default='nd')
 
     def __str__(self):
         return self.message

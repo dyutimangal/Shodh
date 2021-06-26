@@ -3,9 +3,13 @@
   
 	<div class="media-body">
 		<h6>
-			<strong>Your Username : </strong><a href="{% url 'accounts:profile' slug=user.userprofile.username %}">@{{ post.user.userprofile.username }}</a>
+			<strong>Username : </strong><a href="{% url 'accounts:profile' slug=user.userprofile.username %}">@{{ post.user.userprofile.username }}</a>
 			<br/>
 			<strong>Applied on : </strong><time class="time">{{ post.created_at }}</time>
+			{% if post.accepted %}
+			<br>
+			<button type="button" class="btn btn-success btn-sm">Selected</button>
+			{% endif %}
 		</h6>
 		<h4 class="media-heading">
 			
@@ -15,7 +19,7 @@
 		</h4>
 		<div style="padding-top:3%">
 			<h6>
-				<div><span style="font-weight: 600;">Your Name : </span><span style="font-weight: 400;">{{ post.name }}</span></div>
+				<div><span style="font-weight: 600;">Name : </span><span style="font-weight: 400;">{{ post.name }}</span></div>
 				<div><span style="font-weight: 600;">Current Year : </span><span style="font-weight: 400;">{{ post.year }}</span></div>
 				<div><span style="font-weight: 600;">Contact Number : </span><span style="font-weight: 400;">{{ post.contact_number }}</span></div>
 				<div><span style="font-weight: 600;">Email ID : </span><span style="font-weight: 400;">{{ post.email_ID }}</span></div>
