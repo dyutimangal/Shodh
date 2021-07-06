@@ -18,10 +18,16 @@ from django.contrib import admin
 from . import views
 from django.urls import path
 
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 urlpatterns = [
     url(r"^$", views.HomePage.as_view(), name="home"),
     path('oauth2/', include('django_auth_adfs.urls')),
-    url(r"^test/$", views.TestPage.as_view(), name="test"),
+    url(r"^test/$", views.sample_view, name="test"),
+    url(r"^CreateProfile/$", views.CreateProfile.as_view(), name="CreateProfile"),
+    url(r"^test2/$", views.TestPage.as_view(), name="test2"),
     url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
     url(r"^admin/", admin.site.urls),
     url(r"^accounts/", include("accounts.urls", namespace="accounts")),
@@ -29,3 +35,4 @@ urlpatterns = [
     url(r"^posts/", include("posts.urls", namespace="posts")),
     url(r"^groups/",include("groups.urls", namespace="groups")),
 ]
+urlpatterns+=static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

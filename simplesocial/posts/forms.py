@@ -2,10 +2,12 @@ from django import forms
 
 from posts import models
 
+from django.forms import ModelForm
+from .models import Post
 
 class PostForm(forms.ModelForm):
     class Meta:
-        fields = ("message", "group")
+        fields = ("message", "group", "resume")
         model = models.Post
 
     def __init__(self, *args, **kwargs):
@@ -17,3 +19,8 @@ class PostForm(forms.ModelForm):
                     pk__in=user.groups.values_list("group__pk")
                 )
             ) 
+
+class UpdateForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = ['accepted']

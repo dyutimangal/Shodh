@@ -1,46 +1,136 @@
 {% extends "groups/group_base.html" %}
 
+{% load static %}
 {% block pregroup %}
-
-
-<h1>{{group.name}}</h1>
-
 
 {% endblock %}
 
 
 {% block group_content %}
+<div style=" padding-top: 15%;"">
 
-<h2>- Created by {{ group.creator }}</h2>
+	<h1>{{group.name}}</h1>
+	<!-- Recent Jobs Start -->
+	<div class=" section " style=" padding-top: 5%;"">
+		<div class=" container">
+			<div class="row mb-n5">
 
-<p> {{group.description}}</p>
+				<!-- Job List Details Start -->
 
-{% if group.creator != user %}
-<p> <a href="{% url 'posts:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span>Apply! </a> </p>
-{% endif %}
 
-<div class="col-md-8">
-	{% if group.creator == user %}
 
-		{% if group.posts.count == 0 %}
-		<h2>No applications for this intern!</h2>
+				<div class="col-lg-8 col-12 mb-5 pr-lg-5">
+					<div class="job-list-details">
+						<div class="job-details-head row mx-0">
+							
+							<div class="salary-type col-auto order-sm-3">
+								<span class="salary-range">{{ group.stipend }}</span>
 
-		{% else %}
+								{% if group.workstatus == "pt" %}
+								<span class="badge badge-success">Part-Time</span>
+								{% else %}
+								<span class="badge badge-success">Full-Time</span>
+								{% endif %}
+								<!-- <span class="badge badge-success">FullTime</span> -->
+							</div>
+							<div class="content col">
+								<h5 class="title">{{ group.name }}</h5>
+								<ul class="meta">
+									<!-- <h6>{{ group.description_html|safe }}</h6> -->
+									<li><strong class="text-primary"> Created by <span class="badge"> {{ group.creator.userprofile.name }}
+											</span></strong>
+									</li>
+									<li>Number of Application{{ group.posts.count|pluralize }} <span class="badge">
+											{{ group.posts.count }} </span></li>
+								</ul>
+							</div>
+						</div>
 
-			{% for post in group.posts.all %}
-					{% include "posts/_post.html" %}
-			{% endfor %}
+						<div class="job-details-body">
+							<h6 class="mb-3">Created by</h6>
+							<p>{{group.creator.userprofile.name}}</p>
+							<h6 class="mb-3">Job Description</h6>
+							<p>{{group.description}}</p>
+							<h6 class="mb-3 mt-4">Expected Qualifications & Skills</h6>
+							<p>{{ group.expected_qualifications}}</p>
+							<h6 class="mb-3 mt-4">Additional Questions to Applicant (if any) </h6>
+							<p>{{ group.additional_questions_to_applicant}}</p>
+						</div>
+					</div>
+				</div>
+				<!-- Job List Details End -->
 
-		{% endif %}
-		
-	{% else %}
-		{% for post in group.posts.all %}
-			{% if post.user == user %}
-				{% include "posts/_post.html" %}
-			{% endif %}
-		{% endfor %}
+				<!-- Job Sidebar Wrap Start -->
+				
+				<div class="col-lg-4 col-12 mb-5">
+					<div class="sidebar-wrap">
+						<!-- Sidebar (Apply Buttons) Start -->
+						{% if group.creator != user %}
 
-	{% endif %}
+
+						<div class="sidebar-widget">
+							<div class="inner">
+								<div class="col-xl-auto col-lg-12 col-sm-auto col-12 p-2">
+									<a href="{% url 'posts:create' %}" class="d-block btn btn-primary">Apply Now</a>
+								</div>
+
+							</div>
+						</div>
+						{% endif %}
+						<!-- Sidebar (Apply Buttons) End -->
+
+						<!-- Sidebar (Job Overview) Start -->
+						<div class="sidebar-widget">
+							<div class="inner">
+								<h6 class="title">Job Overview</h6>
+								<ul class="job-overview list-unstyled">
+									<li><strong>Vacancy:</strong> {{ group.vacancy }}</li>
+									<li><strong>Status:</strong> {{ group.workstatus }}</li>
+									<li><strong>Location:</strong> {{ group.location }}</li>
+									<li><strong>Field of Job:</strong>{{ group.field_of_job}}</li>
+									<li><strong>Stipend:</strong>{{ group.stipend}}</li>
+									<li><strong>Application Deadline:</strong> {{ group.apply_by}}</li>
+									<li><strong>Starting Date:</strong>{{ group.start_date}}</li>
+								</ul>
+							</div>
+						</div>
+						<!-- Sidebar (Job Overview) End -->
+
+
+					</div>
+				</div>
+				<!-- Job Sidebar Wrap End -->
+
+				<div class="col-md-8">
+					{% if group.creator == user %}
+
+						{% if group.posts.count == 0 %}
+							<h4 style="padding-bottom: 5%;">No applications for this intern yet!</h4>
+						{% else %}
+							{% for post in group.posts.all %}
+								{% include "posts/_post.html" %}
+							{% endfor %}
+						{% endif %}
+					{% else %}
+								<div class="row mb-n5" style="padding-bottom: 20%;">
+									<div class="job-details-body">
+										{% for post in group.posts.all %}
+											{% if post.user == user %}
+
+										<h6 class="mb-3">Your Application</h6>
+												{% include "posts/_post.html" %}
+										{% endif %}
+										{% endfor %}
+					{% endif %}
+									</div>
+								</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Recent Jobs End -->
+
 
 </div>
+
 {% endblock %}

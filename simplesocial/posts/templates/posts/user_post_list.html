@@ -1,16 +1,21 @@
 {% extends "posts/post_base.html" %}
 
 {% block prepost %}
-<div class="col-md-4">
-	<h1>@{{ post_user.username }}</h1>
-	<p>All applications</p>
-</div>
 {% endblock %}
 
 {% block post_content %}
-<div class="col-md-8">
-	{% for post in post_list %}
+<div style="padding-top: 15%;">
+	<div class=" col-md-4">
+		<h1>@{{ user.userprofile.username }}</h1>
+		<h2>All applications</h2>
+	</div>
+	<div class="col-md-8">
+		{% for post in post_list %}
+		{% if post.user == user %}
+		<h3>In {{post.group}}</h3>
 		{% include "posts/_post.html" %}
-	{% endfor %}
+		{% endif %}
+		{% endfor %}
+	</div>
 </div>
 {% endblock %}

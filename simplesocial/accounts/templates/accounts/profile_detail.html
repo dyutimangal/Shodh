@@ -1,0 +1,105 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div style="padding-top: 7%;">
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row mb-n5">
+
+                <div class="col-lg-8 col-12 mb-5 pr-lg-5">
+
+                    <!-- Company Details Start -->
+                    <div class="company-details">
+                    <h3 class="mb-3">{{ object.name }}</h3>
+                    <h4 class="mb-3">Username : {{object.user.userprofile.username}}</h4>
+                    {% if object.position == "stud" %}
+                        <h5 class="mb-3">Position :  Student </h5>
+                    {% elif object.position == "prof" %}
+                        <h5 class="mb-3">Position :  Faculty </h5>
+                    {% elif object.position == "alumnus" %}
+                        <h5 class="mb-3">Position :  Alumni </h5>
+                    {% endif %}                    
+                    </div>
+                    <!-- Company Details Start -->
+                    <div class="company-details">
+                        {{ object.aboutme }}         
+                    </div>
+                </div>
+
+                <!-- Company Sidebar Wrap Start -->
+                <div class="col-lg-4 col-12 mb-5">
+                    <div class="sidebar-wrap">
+                        <!-- Sidebar (Company) Start -->
+                        <div class="sidebar-widget">
+                            <div class="inner">
+                                <div class="sidebar-company">
+                                    <span class="company-logo"><img src="{{ object.photo.url }}" alt="company-1"></span>
+                                    <h6 class="title"> {{object.name}} </h6>
+                                    <ul>
+                                        <li><strong>Branch:</strong> {{ object.branch }}</li>
+                                        <li><strong>Gender:</strong> {{ object.gender }}</li>
+                                        <li><strong>CPI:</strong> {{ object.cpi }}</li>
+                                        <li><strong>Skills:</strong> <a
+                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Website</a>,
+                                            <a
+                                                href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#">Software</a>
+                                        </li>
+                                        <li><strong>Founded:</strong> 2006</li>
+                                        <li><strong>Linkedin:</strong> <a href="{{object.linkedin}}">{{object.linkedin}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            
+                            </div>
+                            
+                        <div class="inner">
+							<div class="col-xl-auto col-lg-12 col-sm-auto col-12 p-2">
+								<a href="{% url 'accounts:update' slug=user.userprofile.username %}"><button type="button" class="btn btn-info">Edit Profile</button></a>
+                           </div>
+
+						</div>
+                        </div>
+                        <!-- Sidebar (Company) End -->
+
+                    </div>
+                </div>
+                <!-- Company Sidebar Wrap End -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Company List End -->
+
+    <!-- Footer Top Section Start -->
+    <!-- Footer Top Section End -->
+
+    <!-- JS
+============================================ -->
+
+    <!-- Google Map API JS -->
+    <script src="./companypage_files/js"></script>
+
+    <!-- Vendors JS -->
+    <script src="./companypage_files/modernizr-3.6.0.min.js.download"></script>
+    <script src="./companypage_files/jquery-3.4.1.min.js.download"></script>
+    <script src="./companypage_files/bootstrap.bundle.min.js.download"></script>
+
+    <!-- Plugins JS -->
+    <script src="./companypage_files/slick.min.js.download"></script>
+    <script src="./companypage_files/jquery.waypoints.min.js.download"></script>
+    <script src="./companypage_files/jquery.counterup.min.js.download"></script>
+    <script src="./companypage_files/jquery.parallax.js.download"></script>
+    <script src="./companypage_files/jquery.ajaxchimp.min.js.download"></script>
+    <script src="./companypage_files/ion.rangeSlider.min.js.download"></script>
+    <script src="./companypage_files/jquery.scrollUp.min.js.download"></script>
+
+    <!-- Main Activation JS -->
+    <script src="./companypage_files/main.js.download"></script><a id="scrollUp"
+        href="https://demo.hasthemes.com/keller-preview/keller/company-single.html#top"
+        style="position: fixed; z-index: 2147483647; display: none;"><i class="fas fa-arrow-up"></i></a>
+
+
+</div>
+{% endblock %}

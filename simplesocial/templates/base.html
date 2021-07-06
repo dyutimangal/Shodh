@@ -1,65 +1,253 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shodh</title>
-    <!-- Latest compiled and minified CSS -->
+<!-- saved from url=(0059)https://demo.hasthemes.com/keller-preview/keller/index.html -->
+<html
+  class="js sizes websockets customelements history postmessage webworkers picture pointerevents webanimations webgl srcset flexbox cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside"
+  lang="en">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}">
-
-
-  </head>
-
-
-  <body>
-
-    <nav class="navbar  mynav" role="navigation" id="navbar">
-    			<div class="container">
-
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Shodh</a>
-
-    					<ul class="nav navbar-nav navbar-right">
-    						{% if user.is_authenticated %}
-                      <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Apply for Intern</a></li>
-                      <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Intern</a></li>
-                      <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Intern</a></li>
-                      <li><a href="{% url 'django_auth_adfs:logout' %}" class="btn btn-simple">Log out</a></li>
-    						{% else %}
-    						      <li><a href="{% url 'groups:all' %}"class="btn btn-simple">Available Interns</a></li>
-    						      <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-    						      <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
-    						{% endif %}
-    					</ul>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Shodh</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" type="image/x-icon"
+    href="https://demo.hasthemes.com/keller-preview/keller/assets/images/favicon.png"> -->
 
 
 
-    			</div>
-    		</nav>
-        <div class="container mycontent">
-          {% block content %}
+  <link rel="stylesheet" href="{% static 'simplesocial/css/master.css' %}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/bootstrap.min.css' %}">
 
-          {% endblock %}
+  <!-- Icon Font CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/flaticon.css' %}">
 
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/slick.css' %}">
+
+  <!-- Main Style CSS -->
+
+  <link rel="stylesheet" href="{% static 'Keller - Job Board HTML Template_files/style.css' %}">
+
+  <script type="text/javascript" charset="UTF-8"
+    src="{% static 'Keller - Job Board HTML Template_files/common.js.download' %}"></script>
+  <script type="text/javascript" charset="UTF-8"
+    src="{% static 'Keller - Job Board HTML Template_files/util.js.download' %}"></script>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1008.0" data-gr-ext-installed="">
+
+  <header class="header" style="background: #007bff;">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+
+        <!-- Header Logo Start -->
+        <div class="col">
+          <div class="header-logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Site Logo" width="100"
+                height="auto"></a>
+          </div>
+        </div><!-- Header Logo End -->
+
+        <!-- Offcanvas Toggle Start -->
+        <div class="col-auto d-lg-none d-flex align-items-center">
+          <button class="offcanvas-toggle">
+            <span></span>
+          </button>
+        </div>
+        <!-- Offcanvas Toggle End -->
+
+        <!-- Header Links Start -->
+        {% if user.is_authenticated %}
+        <div class="header-links col-auto order-lg-3">
+          
+          <a href="{% url 'groups:btp' %}">B.Tech Projects</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
+          <a href="{% url 'posts:all' %}">View your Applications</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          
+          <a href="{% url 'groups:yourall' %}">Interns created by you</a>
+        </div>
+        <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'groups:all' %}" ">Interns</a>
+        </div>
+        <div class=" header-links col-auto order-lg-3">
+            <a href="{% url 'groups:create' %}" ">Recruit</a>
         </div>
 
+        <div class="header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+        </div>
+        {% else %}
+
+        <div class=" header-links col-auto order-lg-3">
+          <a href="{% url 'django_auth_adfs:login' %}" > Login</a>
+
+        </div><!-- Header Links End -->
+        {% endif %}
 
 
-<canvas id="canvas"></canvas>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!--Offcanvas Section Start-->
+  <div id="offcanvas" class="offcanvas-section">
+    <button class="offcanvas-close" data-target="#offcanvas">×</button>
+    <div class="offcanvas-wrap">
+      <div class="inner">
+
+        <!-- Offcanvas user Start -->
+
+        {% if user.is_authenticated %}
+        {% else %}
+        <div class="offcanvas-user">
+          <a href="{% url 'django_auth_adfs:login' %}">Login</a>
+            </div>
+        {% endif %}
+        <!-- Offcanvas user End -->
+
+        <!-- Offcanvas Menu Start -->
+        <div class="offcanvas-menu">
+          <nav>
+            <ul>
+            
+
+              {% if user.is_authenticated %}
+
+              <li><a href="{% url 'groups:btp' %}">B.Tech Projects</a>
+              </li>
+              <li><a href="{% url 'posts:all' %}">View your Applications</a></li>
+              <li><a href="{% url 'groups:yourall' %}">Interns created by you</a></li>
+              <li><a href="{% url 'groups:all' %}">Interns</a>
+              </li>
+              <li><a href="{% url 'groups:create' %}">Recruit</a>
+              </li>
+              <li><a href="{% url 'django_auth_adfs:logout' %}">Logout</a>
+              </li>
+              {% else %}
+              <li><a href="{% url 'django_auth_adfs:login' %}">Login</a>
+              </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+        <!-- Offcanvas Menu End -->
+
+      </div>
+    </div>
+  </div>
+  <!--Offcanvas Section End-->
 
 
 
-  </body>
-<!--<script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script>-->  
+
+
+  <div>
+    {% block content %}
+
+    {% endblock %}
+
+  </div>
+  <footer class="text-gray-600 body-font bg-gray-200">
+    <div class="container px-5 pt-8 pb-3 sm:py-10 mx-auto flex items-center flex-col">
+        <a style="display:inline-block;" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            href="https://www.facebook.com/swciitg" target="_blank">
+            <!-- <img src="images/nav/hab_logo.svg" alt="hab-logo" class="transform scale-50"> -->
+            <img src="{% static 'images/swc-logo.svg' %}" alt="swc-logo" class="mr-3 transform scale-110">
+            <span class="text-xl">Students' Web Committee</span>
+        </a>
+        <p style="display:inline-block;" class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-400 sm:py-2 sm:mt-0 mt-4">©
+            2021
+            SWC —
+            <a href="https://www.facebook.com/swciitg" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                target="_blank">@swciitg</a>
+        </p>
+        <span style="display:inline-block;" class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                    viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                    </path>
+                </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path stroke="none"
+                        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                    </path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+            </a>
+        </span>
+    </div>
+</footer>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- JS
+============================================ -->
+
+  <!-- Google Map API JS -->
+  <script src="{% static 'Keller - Job Board HTML Template_files/js'"></script>
+
+  <!-- Vendors JS -->
+  <script src="{% static 'Keller - Job Board HTML Template_files/modernizr-3.6.0.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery-3.4.1.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/bootstrap.bundle.min.js.download' %}"></script>
+
+  <!-- Plugins JS -->
+  <script src="{% static 'Keller - Job Board HTML Template_files/slick.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery.waypoints.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery.counterup.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery.parallax.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery.ajaxchimp.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/ion.rangeSlider.min.js.download' %}"></script>
+  <script src="{% static 'Keller - Job Board HTML Template_files/jquery.scrollUp.min.js.download' %}"></script>
+
+  <!-- Main Activation JS -->
+  <script src="{% static 'Keller - Job Board HTML Template_files/main.js.download' %}"></script><a id="scrollUp"
+    href="https://demo.hasthemes.com/keller-preview/keller/index.html#top"
+    style="position: fixed; z-index: 2147483647; display: none;"><i class="fas fa-arrow-up"></i></i></a>
+
+
+
+</body>
+
 </html>
