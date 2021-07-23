@@ -6,7 +6,9 @@
 			<strong>Username : </strong><a href="{% url 'accounts:profile' slug=user.userprofile.username %}">@{{ post.user.userprofile.username }}</a>
 			<br/>
 			<strong>Applied on : </strong><time class="time">{{ post.created_at }}</time>
-			{% if post.accepted %}
+
+			
+			{% if post.accepted == "a" %}
 			<br>
 			<button type="button" class="btn btn-success btn-sm">Selected</button>
 			{% endif %}
